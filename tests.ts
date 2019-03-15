@@ -24,7 +24,7 @@ console.log("TEST START");
 modem.enableDebug(DEBUG_AT);
 
 // initialize module
-modem.init(SerialPin.C17, SerialPin.C16, BaudRate.BaudRate9600);
+//modem.init(SerialPin.C17, SerialPin.C16, BaudRate.BaudRate9600);
 // some modems have quirks:
 modem.setATPrefix("\rAT");
 
