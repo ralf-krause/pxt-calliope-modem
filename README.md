@@ -1,7 +1,7 @@
 # Calliope mini modem functionality
 
 This MakeCode add-on allows the control of Modems/AT controlled hardware.
-It can be used by the [Makeode Calliope mini editor](https://makecode.calliope.cc/). Should also work
+It can be used by the [Makecode Calliope mini editor](https://makecode.calliope.cc/). Should also work
 with Makecode for Micro:bit.
 
 The code may be used as a starting point for similar AT based systems. Just add it as a 

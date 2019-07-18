@@ -6,7 +6,6 @@
     "dependencies": {
         "core": "*"
     },
-    
     "files": [
         "README.md",
         "modem.ts",
