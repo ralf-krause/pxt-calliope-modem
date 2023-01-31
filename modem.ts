@@ -23,7 +23,7 @@ namespace modem {
      * Initialize the modem with the corresponding serial pins and baud rate.
      * @param {SerialPin} tx the modem transmission pins, eg: SerialPin.C17
      * @param {SerialPin} rx the modem reception pin, eg: SerialPin.C16
-     * @param {BaudRate} rate the new baud rate, eg: BaudRate.BaudRate9600
+     * @param {BaudRate} rate the new baud rate, eg: BaudRate.BaudRate115200
      */
     //% weight=100
     //% blockId=modem_init block="initialize Modem|TX %tx|RX %rx|at baud rate %rate"
