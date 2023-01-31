@@ -5,12 +5,12 @@
  */
 //% weight=2 color=#f2c10d icon="\uf0ec"
 //% advanced=true
-//% parts="modem
+//% parts="modem"
 namespace modem {
     // keep the serial port settings for logging
-    let TX = 15; //C17
-    let RX = 9;  //C16
-    let BAUD = BaudRate.BaudRate9600;
+    let TX = SerialPin.C17;
+    let RX = SerialPin.C16;
+    let BAUD = BaudRate.BaudRate115200;
 
     // the AT prefix, this may need to have even more characters, like "\rAT"
     let AT_PREFIX = "AT";
@@ -134,9 +134,11 @@ namespace modem {
     export function log(prefix: string, message: string): void {
         if(TX == null) return;
         basic.pause(100);
+        // switch to usb and write log data
         serial.resetSerial();
         serial.writeLine(prefix + " " + message);
         while (serial.busy()) basic.pause(10);
+        // switch to modem 
         serial.redirect(TX, RX, BAUD);
         basic.pause(100);
     }
@@ -149,12 +151,15 @@ namespace modem {
     export function logArray(prefix: string, messages: Array<string>): void {
         if(TX == null) return;
         basic.pause(100);
+        // switch to usb and write log data
         serial.resetSerial();
         for (let i = 0; i < messages.length; i++) {
             serial.writeLine(prefix + " (" + messages[i].length + ") " + messages[i]);
         }
         while (serial.busy()) basic.pause(10);
+        // switch to modem
         serial.redirect(TX, RX, BAUD);
         basic.pause(100);
     }
+    
 }

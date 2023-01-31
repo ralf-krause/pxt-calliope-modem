@@ -17,5 +17,13 @@
     "testFiles": [
         "tests.ts"
     ],
-    "public": true
+    "public": true,
+    "targetVersions": {
+        "target": "4.0.29",
+        "targetId": "calliopemini"
+    },
+    "supportedTargets": [
+        "calliopemini"
+    ],
+    "preferredEditor": "tsprj"
 }
